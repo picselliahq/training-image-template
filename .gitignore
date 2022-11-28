@@ -127,3 +127,7 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Repo specific files
+training-package/SDK_trials.py
+training-package/training-folder/classif.py
