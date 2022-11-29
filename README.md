@@ -197,7 +197,8 @@ docker build training-package/. -t <:DOCKER_URL>/picsellia/<:image_name>:capture
 
 where:
 
-- picsellia is the user we create for you in our private registry, **please do not change it**
+- `picsellia` is the user we create for you in our private registry, **please do not change it**
+- `DOCKER_URL` is the `DOCKER_URL` we gave you **WITHOUT the "https://"**
 > Once again, make sure that the chosen `image_name` is unique amongst all the images you want to push to our registry.
 
 > ⚠️ **Warning:** The important fact to notice here is that the docker_image_name variable that you update in your model is composed of the DOCKER_URL AND the username AND the image name, which gives us the complete path to your image
@@ -212,8 +213,12 @@ docker push <:docker_username>/<:image_name>:capture
 For **private registry** users, login with the `DOCKER_LOGIN` and `DOCKER_PASSWORD` when you launch this command:
 
 ```bash
-docker login
+docker login DOCKER_URL
 ```
+
+where:
+
+- `DOCKER_URL` is the full `DOCKER_URL` we gave you
 
 Once successfully authenticated, run the **push** command:
 
@@ -221,6 +226,10 @@ Once successfully authenticated, run the **push** command:
 docker push <:DOCKER_URL>/<:docker_username>/<:image_name>:capture
 ```
 
+where:
+
+- `DOCKER_URL` is the `DOCKER_URL` we gave you **WITHOUT the "https://"**
+  
 Aaaand Tadaa! You model is now pushed in a Container registry and accessible from Picsellia 🎉 
 
 ### Conclusion
