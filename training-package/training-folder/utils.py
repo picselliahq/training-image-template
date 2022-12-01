@@ -11,7 +11,7 @@ import sys
 import picsellia
 from pycocotools.coco import COCO
 import shutil
-from keras import backend as K
+from tensorflow.keras import backend as K
 from sklearn.metrics import classification_report
 from sklearn.metrics import f1_score, recall_score, precision_score
 import tensorflow as tf
